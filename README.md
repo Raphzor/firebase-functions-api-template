@@ -19,17 +19,19 @@ Feel free to fork it and/or recommend enhancements opening up a ticket 😉️
 
 The file structure is as follows:
 
-.
+```
+
 ├── functions # Firebase functions root
     ├── __tests__ # Automated tests
     ├── api # Endpoints definitions
-        ├── _endpoint_folder_ # Endpoints folders
+        └── _endpoint_folder_ # Endpoints folders
     └── index.ts # Entrypoint for function calls
 ├── domains # Domain controllers
     └── _controllers_folder_ # Controller folders
         └── _interfaces_folder_ # Interfaces for the controller
 └── utils # Utilities for the api
 
+```
 ## Packages included
 
 - firebase-admin
