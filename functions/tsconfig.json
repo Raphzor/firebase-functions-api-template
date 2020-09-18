@@ -1,15 +1,32 @@
 {
   "compilerOptions": {
+    "lib": ["es2017", "DOM"],
+    "removeComments": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
     "module": "commonjs",
-    "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "outDir": "lib",
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
     "sourceMap": true,
-    "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "outDir": "lib"
   },
   "compileOnSave": true,
   "include": [
-    "src"
+    "src",
+    "__tests__/api/hello-world/hello-world.helloWorld.test.ts",
+    "__tests__/api/hello-world/addMessage.test.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    ".serverless/**/*",
+    ".webpack/**/*",
+    "_warmup/**/*",
+    ".vscode/**/*",
+    "src/api/**/*",
+    "src/domain/**/*",
+    "src/utils/**/*"
   ]
 }
