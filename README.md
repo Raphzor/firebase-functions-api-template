@@ -32,6 +32,7 @@ The file structure is as follows:
 └── utils # Utilities for the api
 
 ```
+
 ## Packages included
 
 - firebase-admin
