@@ -48,9 +48,11 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: yarn test
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        run: yarn test
 
   deploy:
     name: Deploy on Firebase Functions
