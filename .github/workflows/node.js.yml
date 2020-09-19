@@ -48,11 +48,9 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        run: yarn test
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: yarn test
 
   deploy:
     name: Deploy on Firebase Functions
@@ -65,12 +63,8 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: dist
-          path: dist
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
