@@ -1,3 +1,11 @@
+# Typescript v1 declaration files
+typings/
+
+lib
+*.log
+.env
+coverage
+
 # Logs
 logs
 *.log
