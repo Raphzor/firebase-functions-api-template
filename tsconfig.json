@@ -13,12 +13,7 @@
     "target": "es2017",
     "outDir": "lib"
   },
-  "compileOnSave": true,
-  "include": [
-    "src",
-    "__tests__/api/hello-world/hello-world.helloWorld.test.ts",
-    "__tests__/api/hello-world/addMessage.test.ts"
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",
@@ -26,7 +21,7 @@
     "_warmup/**/*",
     ".vscode/**/*",
     "src/api/**/*",
-    "src/domain/**/*",
-    "src/utils/**/*"
-  ]
+    "__tests__/**/*"
+  ],
+  "files": ["src/api/index.ts"]
 }
