@@ -3,8 +3,8 @@ import { firestore, logger } from "firebase-functions";
 export class FirestoreHandler {
   // Listens for new messages added to /messages/:documentId/original and creates an
   // uppercase version of the message to /messages/:documentId/uppercase
-  static async makeUppercase(doc: string) {
-    firestore.document(doc).onCreate((snap, context) => {
+  static makeUppercase(doc: string) {
+    const res = firestore.document(doc).onCreate(async (snap, context) => {
       // Grab the current value of what was written to Cloud Firestore.
       const original = snap.data().original;
 
@@ -14,7 +14,10 @@ export class FirestoreHandler {
       const uppercase = original.toUpperCase();
 
       // Setting an 'uppercase' field in Cloud Firestore document returns a Promise.
-      return snap.ref.set({ uppercase }, { merge: true });
+      return await snap.ref.set({ uppercase }, { merge: true });
     });
+    return res;
   }
 }
+
+export const makeUppercase = FirestoreHandler.makeUppercase;
