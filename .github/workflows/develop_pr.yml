@@ -42,8 +42,8 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Build
-        run: yarn run build
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
