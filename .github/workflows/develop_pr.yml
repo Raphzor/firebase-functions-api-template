@@ -25,9 +25,9 @@ jobs:
         run: yarn run build
       - name: Run Unit Tests
         run: yarn run test
-      - name: Install firebase-admin
-        run: npm install -g firebase-admin
       - name: Deploy to Firebase
-        run: yarn run deploy:dev
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy -P dev --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
