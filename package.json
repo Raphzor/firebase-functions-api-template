@@ -9,7 +9,8 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "test": "jest --coverage",
-    "deploy": "firebase deploy --only functions",
+    "deploy:dev": "firebase deploy -P dev --only functions",
+    "deploy:prod": "firebase deploy -P prod --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
