@@ -1,7 +1,7 @@
 {
   "name": "firebase-function-api-ts-template",
   "description": "Boilerplate project for using Firebase Functions with Typescript, using a base folder structure.",
-  "main": "lib/api/index.js",
+  "main": "dist/api/index.js",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
