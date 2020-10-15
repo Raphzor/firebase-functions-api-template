@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "amazing-budget-app",
+    "dev": "amazing-budget-app",
+    "prod": "amazing-budget-app"
+  }
+}

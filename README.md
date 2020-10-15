@@ -15,6 +15,14 @@ Feel free to fork it and/or recommend enhancements opening up a ticket 😉️
 7. On your Firebase console, check out if a doc was created with a `HelloWorld` text property, and `HELLOWORLD` upperCase property.
 8. ENJOY! 😎️
 
+## Setup Github Actions
+
+Github CI is set on this repo. To run it properly, do the following:
+
+1. Run `firebase login:ci`. This will retrieve you with a Token
+2. On Github, go to the repo Settings -> Secrets, and add a new secret called `FIREBASE_TOKEN`. Paste the Token from step 1.
+3. Every new pull request will run Github CI. Link your dev environment to the `develop` branch, and your production env to the `master` branch.
+
 ## File structure
 
 The file structure is as follows:

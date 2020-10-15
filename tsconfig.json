@@ -11,7 +11,7 @@
     "noImplicitReturns": true,
     "sourceMap": true,
     "target": "es2017",
-    "outDir": "lib"
+    "outDir": "dist"
   },
   "include": ["src"],
   "exclude": [

@@ -1,6 +1,6 @@
 import { firestore } from "firebase-admin";
 
-export class HelloWorldController {
+class HelloWorldController {
   // Take the text parameter passed to this HTTP endpoint and insert it into
   // Cloud Firestore under the path /messages/:documentId/original
   static async writeMessage(text: string): Promise<string> {
@@ -12,3 +12,5 @@ export class HelloWorldController {
     return writeResult.id;
   }
 }
+
+export const writeMessage = HelloWorldController.writeMessage;
