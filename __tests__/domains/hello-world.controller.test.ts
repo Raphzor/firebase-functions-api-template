@@ -1,18 +1,20 @@
-import * as admin from "firebase-admin";
 import { writeMessage } from "../../src/domains/hello-world/hello-world.controller";
+import * as firestoreUtils from "../../src/utils/firestore.handler";
 
 jest.mock("firebase-admin");
 describe("Tests for helloWorld controller", () => {
-  xit("should call firestore function once", async () => {
+  it("should call writeDocument function once, with parameter 'text'", async () => {
     const text = "test_1";
-    const mockAdd = jest.fn();
-    const mockCollection = jest.spyOn(admin.firestore(), "collection");
+    const spyWriteDocument = jest.spyOn(firestoreUtils, "writeDocument");
 
-    mockCollection.mockImplementationOnce(() => {
-      return ({ mockAdd } as unknown) as any;
+    spyWriteDocument.mockImplementationOnce(() => {
+      return {} as any;
     });
 
     await writeMessage(text);
-    expect(admin.firestore).toHaveBeenCalledTimes(1);
+    expect(spyWriteDocument).toHaveBeenCalledTimes(1);
+    expect(spyWriteDocument).toHaveBeenCalledWith("messages", {
+      original: text,
+    });
   });
 });
